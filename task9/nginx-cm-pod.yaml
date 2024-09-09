@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: myapp
+  name: nginx-cm
+spec:
+  containers:
+  - image: nginx
+    name: nginx
+    volumeMounts:
+      - name: cm-volume
+        mountPath: /etc/spartaa
+  volumes:
+    - name: cm-volume
+      configMap:
+        name: cm-volume

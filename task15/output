@@ -1,0 +1,3 @@
+ENVIRONMENT=linux
+GRPC_PORT=8888
+LOG_LEVEL=warning

@@ -1,0 +1,1 @@
+ kubectl exec -it flask-app-deploy-58959549c4-qt8p8 -- env | grep -E 'ENVIRONMENT|LOG_LEVEL|GRPC_PORT'

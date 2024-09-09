@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: myapp
+  name: flask-app
+  namespace: p-xurshid
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: something
+                operator: In
+                values:
+                - true
+      containers:
+      - image: nvrbckdown/something:v1
+        name: test
+        ports:
+          - containerPort: 80
+        livenessProbe:
+          tcpSocket:
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 15
+        env:
+        - name: LOG_LEVEL
+          value: debug
+        - name: GRPC_PORT
+          value: "80"
+        - name: ENVIRONMENT
+          value: development
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: NODE_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
+        - name: DB_URL
+          value: "postgres://hello:world@127.0.0.1:5432/devops"
+

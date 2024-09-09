@@ -1,0 +1,19 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"rbac.authorization.k8s.io/v1","kind":"Role","metadata":{"annotations":{},"name":"node-list-role","namespace":"p-xurshid"},"rules":[{"apiGroups":[""],"resources":["pods","deployment"],"verbs":["list,get,create,delete"]}]}
+  creationTimestamp: "2024-09-06T14:30:07Z"
+  name: node-list-role
+  namespace: p-xurshid
+  resourceVersion: "189649"
+  uid: 2fa6206f-491f-49c8-aaf6-446cfab90156
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - deployment
+  verbs:
+  - list,get,create,delete

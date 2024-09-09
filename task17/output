@@ -1,0 +1,4 @@
+NAME                ROLE                         AGE
+node-list-binding   ClusterRole/node-list-role   2d23h
+p-xurshid           Role/p-xurshid               2d23h
+role-binding        Role/role                    23s

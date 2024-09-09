@@ -1,0 +1,50 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  data:
+    http_port: "80"
+    message: Proxima Uacademy Devops Course
+  kind: ConfigMap
+  metadata:
+    creationTimestamp: "2024-09-06T15:23:45Z"
+    name: configmap
+    namespace: p-xurshid
+    resourceVersion: "241647"
+    uid: 2003e034-7787-44c8-8b74-69181a4d7949
+- apiVersion: v1
+  data:
+    ca.crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDBTCCAe2gAwIBAgIIFsMLHCJjJ6EwDQYJKoZIhvcNAQELBQAwFTETMBEGA1UE
+      AxMKa3ViZXJuZXRlczAeFw0yNDA5MDYxMDU1NDNaFw0zNDA5MDQxMTAwNDNaMBUx
+      EzARBgNVBAMTCmt1YmVybmV0ZXMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEK
+      AoIBAQCtMT3Gsk1I7r2DxqvMHdVsSMqPLR9E0bPN3H7U8YayiAwzPf/4C/g5S9/K
+      h+N8wEmtb2Q0/IyEZLYOgZ+Vdlx4kXVZwtTcpR9GfX4aOLnkn0Zzf13Ts0jGIPB7
+      DYPtg7/L+EA1v6CoBaZ0WYf7Tu3ggfqGC07izt0C7rs9JkJj3XMm8vNj610+Dv7J
+      bb8Mgw6ChJtqv2qJqkqN3HP6RV6jguKs6SzYKn9kdaxwOuFap4vP0+XZOU0eiUhI
+      a/Q6jWJ0AViwA15NlorwsaK+H/oThWA6zuYkDANXpepz2wb+4r608wSjIGBaD/nc
+      iQ0KwoKTVo/xWPHJtflmqScsplbFAgMBAAGjWTBXMA4GA1UdDwEB/wQEAwICpDAP
+      BgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBRgrNUtNbmhI3SemnKuXk3JVpL83zAV
+      BgNVHREEDjAMggprdWJlcm5ldGVzMA0GCSqGSIb3DQEBCwUAA4IBAQBkRhUvsLTt
+      VI70vRZCcsLwwpEbX9va4SFapdt9RiEoHyBoJ1zzeVQMUGSC/+AlvQ07gFyWHfOl
+      HFBhYi6ZeDkpLerWpITxs14FHUR+C5nb0DN/Ho5Lwlt9ks58gAltor1oYtBgRG1Z
+      RN0peTHOjK1GRdxJngmd0sjKVk24Lkui1zFMt5b53urHKH17lko4vqbl1QCbCi6e
+      BvKot7121VoqKJo6r/WlPvIcXvgaJSHEidCQtBNlbMrUUckxtlScMAocUnM3tFBj
+      irfuT9p7Q/fJy29vuP/EiRoiCqBv159BEDSLXzBmqZKy3sE7gTAaT7HAuZXHobfP
+      6mE17SF4nSfD
+      -----END CERTIFICATE-----
+  kind: ConfigMap
+  metadata:
+    annotations:
+      kubernetes.io/description: Contains a CA bundle that can be used to verify the
+        kube-apiserver when using internal endpoints such as the internal service
+        IP or kubernetes.default.svc. No other usage is guaranteed across distributions
+        of Kubernetes clusters.
+    creationTimestamp: "2024-09-06T14:15:40Z"
+    name: kube-root-ca.crt
+    namespace: p-xurshid
+    resourceVersion: "175697"
+    uid: cf8f8453-717e-43e5-9242-a47ed02f63f4
+kind: List
+metadata:
+  resourceVersion: ""

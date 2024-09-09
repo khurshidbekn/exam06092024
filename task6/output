@@ -1,0 +1,3 @@
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                             SELECTOR
+myapp-nginx    2/2     2            2           41m   nginx        nginx                              app=myapp
+task6-deploy   1/1     1            1           95s   myapp        visionindark/2048-react:v1-amd64   app=myapp

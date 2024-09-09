@@ -1,0 +1,15 @@
+    generateName: myapp-nginx-658b9bd95f-
+    labels:
+      app: myapp
+--
+    generateName: myapp-nginx-658b9bd95f-
+    labels:
+      app: myapp
+--
+    creationTimestamp: "2024-09-06T15:15:45Z"
+    labels:
+      app: redis
+--
+    creationTimestamp: "2024-09-06T15:15:45Z"
+    labels:
+      app: redis

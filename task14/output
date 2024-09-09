@@ -1,0 +1,2 @@
+NAME                     DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE   CONTAINERS   IMAGES   SELECTOR
+task14-nginx-daemonset   4         4         4       4            4           <none>          29s   nginx        nginx    app=nginx

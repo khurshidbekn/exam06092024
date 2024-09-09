@@ -1,0 +1,2 @@
+kubectl exec nginx-cm -- ls /etc/spartaa
+

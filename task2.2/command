@@ -1,0 +1,2 @@
+kubectl expose deployment myapp-nginx --port=80 --target-port=80 --type=NodePort -n p-xurshid
+

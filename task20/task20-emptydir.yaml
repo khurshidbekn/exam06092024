@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-storage
+spec:
+  containers:
+  - name: redis
+    image: redis:alpine
+    volumeMounts:
+    - name: empty-dir
+      mountPath: /data/redis
+  volumes:
+  - name: empty-dir
+    emptyDir:
+      sizeLimit: 1024Mi
+

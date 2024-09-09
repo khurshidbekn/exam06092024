@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  http_port: "80"
+  message: Proxima Uacademy Devops Course
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: configmap

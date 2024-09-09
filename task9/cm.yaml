@@ -1,0 +1,8 @@
+apiVersion: v1
+data:
+  var8: val8
+  var9: val9
+kind: ConfigMap
+metadata:
+  name: cm-volume
+

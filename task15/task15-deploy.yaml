@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: flask-app-deploy
+  name: flask-app-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-app-deploy
+  template:
+    metadata:
+      labels:
+        app: flask-app-deploy
+    spec:
+      containers:
+      - image: nvrbckdown/something:v1
+        name: something
+        envFrom:
+        - secretRef:
+            name: task15-secret
+

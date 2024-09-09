@@ -1,0 +1,1 @@
+kubectl get pods -oyaml|grep labels -2

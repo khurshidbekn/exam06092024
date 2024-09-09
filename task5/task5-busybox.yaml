@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox
+  namespace: p-xurshid
+  labels:
+    app: myapp
+spec:
+  containers:
+  - name: busybox
+    image: busybox
+    command: ["sh", "-c", "env; sleep 3600"]
+    env:
+    - name: http_port
+      valueFrom:
+        configMapKeyRef:
+          name: configmap
+          key: http_port
+    - name: message
+      valueFrom:
+        configMapKeyRef:
+          name: configmap
+          key: message
+
+  terminationGracePeriodSeconds: 1

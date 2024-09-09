@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: task13-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: xnamozov.nvrbckdown.uz
+    http:
+      paths:
+      - path: /config
+        pathType: Exact
+        backend:
+          service:
+            name: task12-flask-service 
+            port:
+              number: 80
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: frontend 
+            port:
+              number: 80
+

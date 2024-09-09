@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod-1
+  namespace: p-xurshid
+  labels:
+    app: redis
+spec:
+  containers:
+  - name: redis1
+    image: redis
+    ports:
+    - containerPort: 6379
+    readinessProbe:
+      tcpSocket:
+        port: 6379
+      initialDelaySeconds: 5
+      periodSeconds: 5
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: redis
+            operator: In
+            values:
+            - "true"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod-2
+  namespace: p-xurshid
+  labels:
+    app: redis
+spec:
+  containers:
+  - name: redis2
+    image: redis
+    ports:
+    - containerPort: 6379
+    readinessProbe:
+      tcpSocket:
+        port: 6379
+      initialDelaySeconds: 5
+      periodSeconds: 5
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: redis
+            operator: In
+            values:
+            - "true"
+

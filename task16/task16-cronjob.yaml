@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: pod-ip
+spec:
+  schedule: "*/3 * * * *" 
+  jobTemplate:
+    spec:
+      completions: 2
+      template:
+        metadata:
+          labels:
+            job: pod-ip
+        spec:
+          containers:
+          - name: busybox
+            image: busybox
+            command:
+            - sh
+            - -c
+            - "echo POD_IP=$POD_IP"
+            env:
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP
+          restartPolicy: OnFailure

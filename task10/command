@@ -1,0 +1,1 @@
+kubectl get pods -owide |grep myapp-nginx-658b9bd95f-7psmc
